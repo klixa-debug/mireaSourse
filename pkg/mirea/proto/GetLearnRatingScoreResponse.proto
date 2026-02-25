@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetLearnRatingScoreResponse {
+    Response response = 1;
+}
+
+message Response {
+    repeated Info discipline = 1;
+
+    message ValueData {
+        int32 variant = 1;
+        message Block {
+            string uuid = 1;
+            string title = 2;
+            int32 max = 4;
+        }
+        repeated Block block = 2;
+    }
+    repeated ValueData value_data = 2;
+}
+
+message Info {
+    Title   title = 1;
+    repeated ScoreData score_data = 2;
+    double  total = 3;
+}
+
+message Title {
+    string value = 1;
+}
+
+message ScoreData {
+    string uuid = 1;
+    double now = 2;
+}

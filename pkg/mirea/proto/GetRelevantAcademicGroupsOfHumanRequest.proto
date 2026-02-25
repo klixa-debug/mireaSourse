@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetRelevantAcademicGroupsOfHumanRequest {
+  string uuid = 1;
+}

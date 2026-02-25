@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetAvailableLessonsOfVisitingLogsResponse {
+  message Lesson {
+    int32 attended = 2;
+
+    message Lesson {
+      string uuid = 1;
+
+      message Time {
+        int64 value = 1;
+      }
+
+      Time start = 2;
+      Time end = 3;
+
+      message Text {
+        string uuid = 1;
+        string value = 2;
+      }
+
+      Text subject = 4;
+      Text type = 5;
+
+      message Room {
+        string uuid = 1;
+        string number = 2;
+        string campus = 3;
+      }
+
+      Room room = 6;
+
+      message Teacher {
+        string uuid = 1;
+        string name = 2;
+        string family_name = 3;
+
+        message MiddleName {
+          string value = 1;
+        }
+
+        MiddleName middle_name = 4;
+      }
+
+      Teacher teacher = 7;
+
+      message Huinya {
+        int32 a = 1;
+        int32 b = 2;
+      }
+
+      Huinya huinya = 8;
+    }
+
+    Lesson lesson = 3;
+  }
+
+  repeated Lesson lessons = 2;
+}

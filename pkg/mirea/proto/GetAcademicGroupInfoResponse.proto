@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetAcademicGroupInfoResponse {
+  message UuidInfo {
+    string uuid = 1;
+    int32 variant = 2;
+  }
+
+  UuidInfo uuid = 3;
+
+  message Direction {
+    string uuid = 1;
+    string title = 2;
+
+    message Code {
+      string value = 1;
+    }
+
+    Code code = 3;
+  }
+
+  Direction direction = 5;
+
+  message Department {
+    string uuid = 1;
+    string department = 2;
+    string code = 3;
+  }
+
+  Department deparment = 6;
+
+  message Student {
+    string uuid = 1;
+    string code = 2;
+    int32 variant = 3;
+
+    message Fullname {
+      string uuid = 1;
+      string name = 2;
+      string last_name = 3;
+
+      message SecondName {
+        string value = 1;
+      }
+
+      SecondName second_name = 4;
+    }
+  }
+
+  repeated Student students = 7;
+}

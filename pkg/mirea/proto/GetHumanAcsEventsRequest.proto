@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetHumanAcsEventsRequest {
+  string studentId = 1;
+
+  message Time {
+    int64 value = 1;
+  }
+
+  message TimeTwo {
+    int64 value = 1;
+    int64 megaHuinya = 2;
+  }
+
+  message TimeRange {
+    Time startTime = 1;
+    TimeTwo endTime = 2;
+  }
+
+  TimeRange timeRange = 2;
+
+  int32 huinya1 = 3;
+  int32 huinya2 = 5;
+}

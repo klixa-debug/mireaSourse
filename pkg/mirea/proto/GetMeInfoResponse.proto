@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetMeInfoResponse {
+  Body body = 1;
+}
+
+message Body {
+  Student student = 1;
+  string urlLogout = 2;
+}
+
+message Student {
+  string id = 1;
+  string name = 2;
+  string fullname = 3;
+  Middlename middlename = 4;
+  repeated FutureFlag future = 5;
+  string email = 6;
+  Debug debugInfo = 7;
+}
+
+message Middlename {
+  string value = 1;
+}
+
+message Debug {
+  string value = 1;
+}
+
+message FutureFlag {
+  string value1 = 1;
+  string value2 = 2;
+}

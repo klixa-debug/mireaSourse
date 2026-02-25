@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetMeInfoRequest {
+  string url = 1;
+  int32 value = 3;
+}

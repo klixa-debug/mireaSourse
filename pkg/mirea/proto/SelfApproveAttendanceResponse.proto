@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message SelfApproveAttendanceResponse {
+  Failed failed = 1;
+  Success success = 2;
+}
+
+message Failed {
+  int32 error = 1;
+}
+
+message Success {
+  string uuid = 1;
+  Campus campus = 2;
+  string subject = 3;
+  string subject_type = 4;
+  Xuinya2 xuinya2 = 5;
+  Xuinya2 xuinya3 = 6;
+  Xuinya3 xuinya4 = 7;
+  Teacher teacher = 9;
+  repeated GroupLecture group = 10;
+  string uuid2 = 13;
+  int32 xuinya = 14;
+}
+
+message Campus {
+  string uuid = 1;
+  string xuiyna = 2;
+  string title = 3;
+}
+
+message Xuinya {
+  int32 zalupa = 92426;
+}
+
+message Xuinya2 {
+  int32 zalupa = 1;
+}
+
+message Xuinya3 {
+  int32 zalupa1 = 1;
+  int32 zalupa2 = 2;
+  int32 zalupa3 = 3;
+  int32 zalupa4 = 4;
+}
+
+message Teacher {
+  string uuid = 1;
+  string name = 2;
+  string familyName = 3;
+  MiddlenameTeacher middleName = 4;
+}
+
+message MiddlenameTeacher {
+  string value = 1;
+}
+
+message GroupLecture {
+  string uuid = 1;
+  string title = 2;
+  string uuid2 = 4;
+  Xuinya4 xuinya = 5;
+  SemesterLecture semester = 6;
+  string xuinya2 = 8;
+  Xuinya6 xuinya3 = 9;
+}
+
+message Xuinya4 {
+  int32 zalupa1 = 1;
+  int32 zalupa2 = 2;
+}
+
+message SemesterLecture {
+  string uuid = 1;
+  string title = 2;
+  Xuinya5 xuinya1 = 3;
+  Xuinya5 xuinya2 = 4;
+}
+
+message Xuinya5 {
+  int32 zalupa = 1;
+}
+
+message Xuinya6 {
+  string uuid = 1;
+  int32 zalupa = 2;
+}

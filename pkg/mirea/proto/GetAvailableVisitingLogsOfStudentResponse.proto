@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetAvailableVisitingLogsOfStudentResponse {
+  message Group {
+    string uuid = 1;
+    string title = 2;
+    int32 archived = 3;
+    string uuid_1 = 4;
+
+    message Huinya {
+      int32 a = 1;
+      int32 b = 2;
+    }
+
+    Huinya huinya = 5;
+
+    message Semester {
+      string uuid = 1;
+      string title = 2;
+
+      message Huinya {
+        int32 value = 1;
+      }
+
+      Huinya huinya_1 = 3;
+      Huinya huinya_2 = 4;
+    }
+
+    Semester semester = 6;
+    string empty = 8;
+
+    message UuidWithHuinya {
+      string uuid = 1;
+      int32 variant = 2;
+    }
+
+    UuidWithHuinya uuid_with_huinya = 9;
+  }
+
+  message GroupData {
+    Group group = 1;
+    int32 a = 2;
+    int32 b = 3;
+    string uuid = 4;
+  }
+
+  repeated GroupData groupData = 1;
+}

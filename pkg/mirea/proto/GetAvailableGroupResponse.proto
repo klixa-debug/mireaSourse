@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetAvailableVisitingLogsOfStudentResponse {
+  repeated Term term = 1;
+}
+
+message Term {
+  Group group = 1;
+  int32 variant1 = 2;
+  int32 variant2 = 3;
+}
+
+message Group {
+  string id = 1;
+  string title = 2;
+  string id_semester = 4;
+  Xyinya xyinya = 5;
+  Semester semester = 6;
+  string unknown = 8;
+  Xyinya3 xyinya3 = 9;
+}
+
+message Semester {
+  string id = 1;
+  string half_year = 2;
+  Xyinya2 xyinya2 = 3;
+  Xyinya2 xyinya3 = 4;
+}
+
+message Xyinya {
+  int32 variant1 = 1;
+  int32 variant2 = 2;
+}
+
+message Xyinya2 {
+  int32 value = 1;
+}
+
+message Xyinya3 {
+  string id = 1;
+  int32 value = 2;
+}

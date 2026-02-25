@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "./proto;message";
+
+message GetRelevantAcademicGroupsOfHumanResponse {
+  message Group {
+    string uuid = 1;
+    string title = 2;
+    string number = 3;
+  }
+
+  repeated Group groups = 1;
+}
